@@ -27,7 +27,7 @@ $ npm install -g hexo
 安装完以后开始初始化
 
 ``` bash
-$ npm install hexo
+$ hexo init
 ```
 Hexo随后会自动在目标文件夹建立网站所需要的所有文件。
 
