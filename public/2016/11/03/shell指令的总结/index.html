@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dingdingbai</title>
+        
+        <!-- 主css -->
+        <link rel="stylesheet" href="/css/main.css">
+        <!-- seo -->
+            <meta name="description" content="小记这篇文章主要是为了帮助自己查阅以及巩固之前所学到的知识，所以有什么写的不全面，或者理解不对的地方，希望可以指出~
+SHELL所有测试基于bash。shell里面，每个指令有一个返回值，0表示成功，非0表示不成功。上一个指令的返回值可以通过$?去看。
+shell变量shell变量可以直接使用name=val这种形式来赋值（注意中间没有空格，不能有空格），查看变量的时候，在变量名前面加上$符。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell指令的总结">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/shell指令的总结/index.html">
+<meta property="og:site_name" content="dingdingbai">
+<meta property="og:description" content="小记这篇文章主要是为了帮助自己查阅以及巩固之前所学到的知识，所以有什么写的不全面，或者理解不对的地方，希望可以指出~
+SHELL所有测试基于bash。shell里面，每个指令有一个返回值，0表示成功，非0表示不成功。上一个指令的返回值可以通过$?去看。
+shell变量shell变量可以直接使用name=val这种形式来赋值（注意中间没有空格，不能有空格），查看变量的时候，在变量名前面加上$符。">
+<meta property="og:updated_time" content="2016-11-03T11:05:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell指令的总结">
+<meta name="twitter:description" content="小记这篇文章主要是为了帮助自己查阅以及巩固之前所学到的知识，所以有什么写的不全面，或者理解不对的地方，希望可以指出~
+SHELL所有测试基于bash。shell里面，每个指令有一个返回值，0表示成功，非0表示不成功。上一个指令的返回值可以通过$?去看。
+shell变量shell变量可以直接使用name=val这种形式来赋值（注意中间没有空格，不能有空格），查看变量的时候，在变量名前面加上$符。">
+            <!-- facicon -->
+        
+        <link rel="icon" href="/images/favicon.ico">
+                
+        <!-- 统计 -->
+        
+        
+</head>
+
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">dingdingbai</a>
+</div>
+<header class="navHeader">
+    <a href="/" class="logo-link">dingdingbai</a>
+    
+            
+    <ul class="nav nav-list">
+        <li class="nav-list-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="nav-list-item"><a href="https://dingdingbai.github.io/resume/">About Me</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="https://dingdingbai.github.io/resume/">About Me</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+<h1 class="blog-title">The dingdingbai Blog</h1>
+
+
+			
+<article class="article-main" itemscope itemprop="blogPost">
+    <div class="articlepad">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/11/03/shell指令的总结/" class="article-title">shell指令的总结</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/11/03/shell指令的总结/" class="article-date">
+        <time datetime="Nov 3rd 2016" itemprop="datePublished">
+            Nov 3rd 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="小记"><a href="#小记" class="headerlink" title="小记"></a>小记</h2><p>这篇文章主要是为了帮助自己查阅以及巩固之前所学到的知识，所以有什么写的不全面，或者理解不对的地方，希望可以指出~</p>
+<h1 id="SHELL"><a href="#SHELL" class="headerlink" title="SHELL"></a>SHELL</h1><p>所有测试基于<code>bash</code>。shell里面，每个指令有一个返回值，0表示成功，非0表示不成功。上一个指令的返回值可以通过<code>$?</code>去看。</p>
+<h2 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h2><p>shell变量可以直接使用<code>name=val</code>这种形式来赋值（注意中间没有空格，不能有空格），查看变量的时候，在变量名前面加上<code>$</code>符。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">name=dingdingbai</div><div class="line"><span class="built_in">echo</span> <span class="variable">$name</span></div></pre></td></tr></table></figure></p>
+<h2 id="文件描述符，流与重定向"><a href="#文件描述符，流与重定向" class="headerlink" title="文件描述符，流与重定向"></a>文件描述符，流与重定向</h2><p>每一个程序默认打开三个流，标准输入，标准输出，标准错误输出。<br>shell使用文件描述符来标识一个流。<br>标准输入： 0<br>标准输出： 1<br>标准错误输出： 2<br>e.g<br>a&gt;b，文件描述a重新定向到b指向的地方。一般是重定向到文件或者设备，<code>/dev/null</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">ls <span class="_">-l</span> &gt; a.txt 2&gt;a.txt</div><div class="line"></div><div class="line">ls <span class="_">-l</span> &gt; a.txt 2&gt;&amp;1</div></pre></td></tr></table></figure></p>
+<h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><p>管道操作符<code>|</code>，可以将一个指令的标准输出连接到另一个指令的标准输入。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | grep A <span class="comment"># 将当前目录下所有含有A的文件名列出来</span></div></pre></td></tr></table></figure></p>
+<h2 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h2><p>别名就是可以给一个指令创建另外一个名字，一般是用来简化指令的，少打几个字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> cj=ls <span class="comment"># 输入cj相当于输入ls</span></div><div class="line"><span class="built_in">alias</span> <span class="comment"># 直接输入alias，可以看到当前shell中所有的别名</span></div></pre></td></tr></table></figure>
+<h2 id="shell通配符"><a href="#shell通配符" class="headerlink" title="shell通配符"></a>shell通配符</h2><p><code>{a..z}</code>会自动扩展。</p>
+<p><code>*</code>号shell会替你自动替换。</p>
+<h2 id="子shell，环境变量"><a href="#子shell，环境变量" class="headerlink" title="子shell，环境变量"></a>子shell，环境变量</h2><p>环境变量就是当前shell中能够被子shell继承的变量，普通变量不能被继承。在子shell里修改变量，是不会影响父shell的。在父shell中存在的变量，会在子shell继承。</p>
+<p>使用指令<code>export name=val</code>将变量导出为环境变量。</p>
+<p>用圆括号括起来的指令会在子shell中执行。<code>(ls)</code></p>
+<p>变量赋值可以使用这种语法,<code>name=$(ls)</code></p>
+<h2 id="一行执行多个指令"><a href="#一行执行多个指令" class="headerlink" title="一行执行多个指令"></a>一行执行多个指令</h2><p>第一种，使用分号。</p>
+<p>使用<code>&amp;&amp;</code>或者<code>||</code>号。</p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><ul>
+<li><p><code>cd</code> (changedirectory)改变当前工作目录，后面一般加上你想要更换到的目录<br>e.g</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> Documents</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>pwd</code> (print working directory)打印当前的工作目录，这个指令会显示当前处于哪个目录当中</p>
+</li>
+<li><p><code>ls</code> (list) 展现当前文件夹下面所有的文件</p>
+</li>
+<li><p><code>touch</code> 新建一个空的文件，比如touch a.txt，在当前目录下新建一个名叫a.txt的空文件</p>
+</li>
+<li><p><code>cat</code> + filename  可以直接查看文件里面的内容</p>
+</li>
+<li><p><code>rm</code>(remove) 删除文件或文件夹</p>
+</li>
+<li><p><code>mkdir</code> (make directory)创建一个新的文件夹</p>
+</li>
+<li><p><code>rmdir</code> （make directory)删除空文件，强制删除非空文件夹要使用<code>rm -f [direcoty name]</code></p>
+</li>
+<li><p><code>open</code> 将文件在finder中显示</p>
+</li>
+<li><p><code>which</code> 显示指令的绝对路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">which</span> ls</div><div class="line">ls: aliased to ls -G</div><div class="line">$ <span class="built_in">which</span> <span class="built_in">cd</span></div><div class="line"><span class="built_in">cd</span>: shell built-in <span class="built_in">command</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>echo</code> 打印字符串到标准输出<br>e.g</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span></div><div class="line">hello world</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>mv</code> 移动文件</p>
+</li>
+<li><p><code>ping</code></p>
+</li>
+<li><p><code>grep</code> ((global search regular expression(RE) and print out the line)<br>全面搜索正则表达式并把行打印出来</p>
+</li>
+</ul>
+
+                </div>
+                
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/09/Vim入门知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 关于Vim入门的一些小知识以及操作符</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//dingdingbai.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//dingdingbai.disqus.com/count.js" async></script>
+
+        
+        
+    </div>
+</article>
+
+
+
+			<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+             ♥ <a href="https://github.com/dingdingbai" target="_blank">Bai bai</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+
+		</div>
+	</body>
+	</html>

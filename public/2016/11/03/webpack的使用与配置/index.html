@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dingdingbai</title>
+        
+        <!-- 主css -->
+        <link rel="stylesheet" href="/css/main.css">
+        <!-- seo -->
+            <meta name="description" content="什么是WebpackWebPack可以看做是模块打包器：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack的使用与配置">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/webpack的使用与配置/index.html">
+<meta property="og:site_name" content="dingdingbai">
+<meta property="og:description" content="什么是WebpackWebPack可以看做是模块打包器：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。">
+<meta property="og:image" content="http://ww1.sinaimg.cn/bmiddle/9bd18299gw1f9f5147i48j21kw0sfaeh.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/bmiddle/9bd18299gw1f9f5gee73oj205m02hmx4.jpg">
+<meta property="og:updated_time" content="2016-11-08T07:34:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack的使用与配置">
+<meta name="twitter:description" content="什么是WebpackWebPack可以看做是模块打包器：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/bmiddle/9bd18299gw1f9f5147i48j21kw0sfaeh.jpg">
+            <!-- facicon -->
+        
+        <link rel="icon" href="/images/favicon.ico">
+                
+        <!-- 统计 -->
+        
+        
+</head>
+
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">dingdingbai</a>
+</div>
+<header class="navHeader">
+    <a href="/" class="logo-link">dingdingbai</a>
+    
+            
+    <ul class="nav nav-list">
+        <li class="nav-list-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="nav-list-item"><a href="https://dingdingbai.github.io/resume/">About Me</a></li>
+            
+        
+            
+        <li class="nav-list-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="https://dingdingbai.github.io/resume/">About Me</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+<h1 class="blog-title">The dingdingbai Blog</h1>
+
+
+			
+<article class="article-main" itemscope itemprop="blogPost">
+    <div class="articlepad">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/11/03/webpack的使用与配置/" class="article-title">webpack的使用与配置</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/11/03/webpack的使用与配置/" class="article-date">
+        <time datetime="Nov 3rd 2016" itemprop="datePublished">
+            Nov 3rd 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h3 id="什么是Webpack"><a href="#什么是Webpack" class="headerlink" title="什么是Webpack"></a>什么是Webpack</h3><p>WebPack可以看做是模块打包器：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。<br><img src="http://ww1.sinaimg.cn/bmiddle/9bd18299gw1f9f5147i48j21kw0sfaeh.jpg" alt=""><br><a id="more"></a></p>
+<h3 id="为什么要使用WebPack"><a href="#为什么要使用WebPack" class="headerlink" title="为什么要使用WebPack"></a>为什么要使用WebPack</h3><p>现今的很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的JavaScript代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出了很多好的实践方法<br>模块化，让我们可以把复杂的程序细化为小的文件;<br>优化页面加载，webpack可以将原本需要额外消耗请求的依赖打包放在一个文件里<br>这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别,而手动处理又是非常反锁的，这就为WebPack类的工具的出现提供了需求。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>1.</p>
+<p><img src="http://ww4.sinaimg.cn/bmiddle/9bd18299gw1f9f5gee73oj205m02hmx4.jpg" alt=""><br>创建两个文件夹分别为<code>dist</code>和<code>src</code>，将源码(开发文件)放在<code>src</code>这个文件夹里，将生产文件放在<code>dist</code>文件夹里。</p>
+<p>2.每个项目下都必须配置有一个<code>webpack.config.js</code>（可以取任意的名字，但是推荐用该配置名），告诉<code>webpack</code>它需要做什么。</p>
+<ol>
+<li><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init //生成package.json文件，存放依赖</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>4.在安装依赖的时候文件夹中还会多增加一个<code>node_modules</code>的文件夹，里面含有大量的文件，当我们在sublime中添加项目文件夹的时候为了避免因为显示<code>node_modules</code>文件夹而造成卡顿，可以在sublime的<code>preferences-settings-User</code>里面添加下面的配置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"folder_exclude_patterns"</span>:</div><div class="line">  [</div><div class="line">      <span class="string">"node_modules"</span>,</div><div class="line">  ]</div></pre></td></tr></table></figure></p>
+<p>5.添加<code>.gitignore</code>文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div><div class="line">node_modules</div></pre></td></tr></table></figure></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先安装<code>webpack</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save webpack //项目文件夹安装</div></pre></td></tr></table></figure></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>首先来配置webpack.config.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  entry:   <span class="string">"./src/main.js"</span>,//唯一入口文件</div><div class="line">  output: &#123;</div><div class="line">    path: path.join(__dirname, <span class="string">"dist"</span>),//打包后的文件存放的地方</div><div class="line">    filename: <span class="string">"bundle.js"</span>//打包后输出文件的文件名</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注：“__dirname”是Node.js中的一个全局变量，它指向当前执行脚本所在的目录。</p>
+</blockquote>
+<p>现在如果你需要打包文件只需要在终端里你运行webpack命令就可以了，这条命令会自动参考webpack.config.js文件中的配置选项打包你的项目。<br>接下来配置packjson.json<br>在安装那里，我们提到过<code>npm init</code>，一路回车就行了，再打开package.json里面可以看到下面的信息。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">""</span>,//项目名字，自动生成</div><div class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    //我们需要配置的地方就是这里啦</div><div class="line">  &#125;,</div><div class="line">  <span class="string">"author"</span>: <span class="string">"bai"</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"webpack"</span>: <span class="string">"^1.12.9"</span>//所需要用的依赖</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="使用webpack构建本地服务器"><a href="#使用webpack构建本地服务器" class="headerlink" title="使用webpack构建本地服务器"></a>使用webpack构建本地服务器</h3><p>想不想让你的浏览器监测你都代码的修改，并自动刷新修改后的结果，其实Webpack提供一个可选的本地开发服务器，这个本地服务器基于node.js构建，可以实现你想要的这些功能，不过它是一个单独的组件，在webpack中进行配置之前需要单独安装它作为项目依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install –save webapck-dev-server</div></pre></td></tr></table></figure></p>
+<p>然后在”script”处配置脚本语言<br> <code>&quot;dev&quot;: &quot;webpack-dev-server --content-base dist --port 6200 --color --progress --hot --inline&quot;</code><br>想要运行这段脚本，需要这样用npm run dev 就可以构建一个服务器了。</p>
+<h3 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h3><p>通过使用不同的loader，webpack通过调用外部的脚本或工具可以对各种各样的格式的文件进行处理，比如说把ES6转换为现代浏览器可以识别的JS文件。或者使用React开发时，合适的Loaders可以把React的JSX文件转换为JS文件。<br>Loaders需要单独安装并且需要在webpack.config.js下的modules关键字下进行配置，Loaders的配置选项包括以下几方面：</p>
+<ul>
+<li>test：一个匹配loaders所处理的文件的拓展名的正则表达式（必须）</li>
+<li>loader：loader的名称（必须）</li>
+<li>include/exclude:手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）；</li>
+<li>query：为loaders提供额外的设置选项（可选）</li>
+</ul>
+<h3 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h3><p>首先安装babel需要的依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react</div></pre></td></tr></table></figure></p>
+<p>在webpack中的配置如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry: <span class="string">"./src/main.jsx"</span>,</div><div class="line">  output: &#123;</div><div class="line">    path: path.join(__dirname, <span class="string">"dist"</span>),</div><div class="line">    filename: <span class="string">"bundle.js"</span>,</div><div class="line">  &#125;,</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.jsx$/</span>,</div><div class="line">        loader: <span class="string">"babel"</span>,</div><div class="line">        exclude: <span class="regexp">/node_modules/</span>,</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Babel其实可以完全在webpack.config.js中进行配置，但是考虑到babel具有非常多的配置选项，在单一的webpack.config.js文件中进行配置往往使得这个文件显得太复杂，因此一些开发者支持把babel的配置选项放在一个单独的名为 “.babelrc” 的配置文件中。我们现在的babel的配置并不算复杂，不过之后我们会再加一些东西，因此现在我们就提取出相关部分，分两个配置文件进行配置（webpack会自动调用.babelrc里的babel配置选项），如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;presets&quot;: [&quot;react&quot;, &quot;es2015&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>webpack提供两个工具处理样式表<code>css-loader</code>和<code>style-loader</code>，二者处理的任务不同<code>css-loader</code>使你能够使用类似<code>@import</code>和<code>url(...)</code>的方法实现<code>require()</code>的功能,<code>style-loader</code>将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save style-loader stylus stylus-loader css-loader</div></pre></td></tr></table></figure></p>
+<p>在webpack中的配置如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry: <span class="string">"./src/main.jsx"</span>,</div><div class="line">  output: &#123;</div><div class="line">    path: path.join(__dirname, <span class="string">"dist"</span>),</div><div class="line">    filename: <span class="string">"bundle.js"</span>,</div><div class="line">  &#125;,</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.jsx$/</span>,</div><div class="line">        loader: <span class="string">"babel"</span>,</div><div class="line">        exclude: <span class="regexp">/node_modules/</span>,</div><div class="line">      &#125;,</div><div class="line">       &#123;</div><div class="line">        test: <span class="regexp">/\.styl$/</span>,</div><div class="line">        exclude: <span class="regexp">/node_modules/</span>,</div><div class="line">        loader: <span class="string">"style!css!stylus"</span>,</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.css$/</span>,</div><div class="line">        loader: <span class="string">"style!css"</span>,</div><div class="line">      &#125;,</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在前面提到过，webpack只有单一的入口，其它的模块需要通过<code>import</code>,<code>require</code>,<code>url</code>等导入相关位置，为了让webpack能找到<code>main.css</code>文件，我们把它导入<code>main.jsx</code>中，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//main.jsx</div><div class="line">import React from &apos;react&apos;;</div><div class="line">import &#123;render&#125; from &apos;react-dom&apos;;</div><div class="line">import &apos;./scr/main.css&apos;;//使用require导入css文件</div></pre></td></tr></table></figure></p>
+<p>以上就是目前使用到的webpack的一些知识啦~后期还会继续完善的。</p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/22/shell指令的总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < shell指令的总结</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//dingdingbai.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//dingdingbai.disqus.com/count.js" async></script>
+
+        
+        
+    </div>
+</article>
+
+
+
+			<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+             ♥ <a href="https://github.com/dingdingbai" target="_blank">Bai bai</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+
+		</div>
+	</body>
+	</html>
